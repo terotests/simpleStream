@@ -1613,9 +1613,10 @@ var simpleStream_prototype = function() {
       streams.forEach(function(s, index) {
         console.log("Index = " + index);
         console.log(s, index);
+        var sIndex = index;
         s.addObserver(function(myProcess) {
-          myRes[index] = myProcess.getValue();
-          console.log(myRes, index);
+          myRes[sIndex] = myProcess.getValue();
+          console.log(myRes, sIndex);
           if (allHasValue()) {
             console.log("Pushing value to stream");
             console.log(myRes);
