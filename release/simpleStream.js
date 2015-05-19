@@ -1610,11 +1610,12 @@ var simpleStream_prototype = function() {
       console.log("**** combine latests called with ");
       console.log(streams);
 
-      streams.forEach(function(s, i) {
-        console.log(s);
+      streams.forEach(function(s, index) {
+        console.log("Index = " + index);
+        console.log(s, index);
         s.addObserver(function(myProcess) {
-          myRes[i] = myProcess.getValue();
-          console.log(myRes, i);
+          myRes[index] = myProcess.getValue();
+          console.log(myRes, index);
           if (allHasValue()) {
             console.log("Pushing value to stream");
             console.log(myRes);
