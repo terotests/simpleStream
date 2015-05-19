@@ -1608,11 +1608,15 @@ var simpleStream_prototype = function() {
       }
 
       streams.forEach(function(s, i) {
-        s.addObserver(function(sourceStream) {
-          myRes[i] = sourceStream.getValue();
+        s.addObserver(function(myProcess) {
+          myRes[i] = myProcess.getValue();
+          console.log(myRes);
           if (allHasValue()) {
+            console.log("Pushing value to stream");
+            console.log(myRes);
             me.pushValue(myRes);
           }
+          myProcess.run();
         });
       });
 
