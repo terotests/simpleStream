@@ -1613,17 +1613,18 @@ var simpleStream_prototype = function() {
       streams.forEach(function(s, index) {
         console.log("Index = " + index);
         console.log(s, index);
-        var sIndex = index;
-        s.addObserver(function(myProcess) {
-          myRes[sIndex] = myProcess.getValue();
-          console.log(myRes, sIndex);
-          if (allHasValue()) {
-            console.log("Pushing value to stream");
-            console.log(myRes);
-            me.pushValue(myRes);
-          }
-          myProcess.run();
-        });
+        (function(sIndex) {
+          s.addObserver(function(myProcess) {
+            myRes[sIndex] = myProcess.getValue();
+            console.log(myRes, sIndex);
+            if (allHasValue()) {
+              console.log("Pushing value to stream");
+              console.log(myRes);
+              me.pushValue(myRes);
+            }
+            myProcess.run();
+          });
+        })(index);
       });
 
       return this;
