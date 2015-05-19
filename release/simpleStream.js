@@ -1176,7 +1176,6 @@ var simpleStream_prototype = function() {
     (function(_myTrait_) {
       _myTrait_.cont = function(withValue) {
 
-        console.log("Continuing with value ", withValue);
         if (this.isArray(withValue)) {
 
           var me = this;
@@ -1205,13 +1204,6 @@ var simpleStream_prototype = function() {
             me.resolve(r);
           });
           wait.resolve(true);
-
-          /*
-           this.startProcess({
-               initWith : val 
-           });
-           */
-
 
 
         } else {
@@ -1305,7 +1297,6 @@ var simpleStream_prototype = function() {
 
         if (this._closure) {
           if (this._parent) {
-            console.log("Closure sending to parent ", withValue);
             this._parent.run(withValue);
             return;
           } else {
@@ -1314,19 +1305,9 @@ var simpleStream_prototype = function() {
           }
         }
         this._stopState = 1;
-        // Replaced code below with this
         this.cont(withValue);
         return;
 
-        /*
-           if(typeof(withValue) !="undefined") {
-               this._context.value = withValue;
-           }
-           
-           this._stopState = 1;
-           
-           this.step();
-           */
       }
       _myTrait_.set = function(name, value) {
         if (typeof(value) != "undefined") {
@@ -1362,20 +1343,11 @@ var simpleStream_prototype = function() {
       }
       _myTrait_.start = function(list) {
 
-        console.log("Startint process with context ");
-        console.log(this._context);
-
         this._list = list;
         this._index = -1;
 
         this.step();
 
-        /*
-           var me = this;
-           setTimeout(function() {
-               me.resolve("all done");
-           },400);
-           */
       }
       _myTrait_.step = function(t) {
 
@@ -1389,7 +1361,7 @@ var simpleStream_prototype = function() {
           // Call the observer
 
           if (this.isObject(obs) && !this.isFunction(obs)) {
-            console.log(obs);
+
             if (obs.closure) {
               obs.closure.setParent(this);
               obs.fn(obs.closure);
@@ -1575,9 +1547,6 @@ var simpleStream_prototype = function() {
 
         setTimeout(function() {
           var currTime = (new Date()).getTime();
-
-          console.log(lastMs);
-          console.log(currTime - lastMs);
 
           if (currTime - lastMs < ms) return;
 
