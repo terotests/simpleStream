@@ -1,15 +1,18 @@
-Simple usage 
-------------
+Simple Stream Class
+-------------------
 
-Simple usage of the class
+
 
 ```
-  var cs = css();
-  cs.animation("animClassName", {
-        duration : "2s",
-        "iteration-count" : 1,
-        "timing-function" : "ease-in"
-    },  { rotate : -100 }, 0.5, { rotate : 100 }, { rotate : 0 }); 
-```
+var stream = simpleStream();
 
-[Demo at jsFiddle] (http://jsfiddle.net/az2daat0/)
+stream.map( function(v) {
+    return "TEST "+v; 
+});
+stream.reduce( function(p,n) {
+    return p+n;
+},"");
+
+steam.pushValue("foobar");
+
+```
