@@ -1661,8 +1661,6 @@ var simpleStream_prototype = function() {
       _myTrait_.__traitInit = _myTrait_.__traitInit.slice();
     if (!_myTrait_.__traitInit) _myTrait_.__traitInit = []
     _myTrait_.__traitInit.push(function(parentProcessor) {
-
-
       this._childIndex = 0;
       this._childStreams = [];
       this._values = [];
@@ -1680,14 +1678,9 @@ var simpleStream_prototype = function() {
 
       _streams[this._id] = this;
 
-
       if (parentProcessor) {
         this._parentProcessor = parentProcessor;
       }
-
-
-
-
 
     });
     _myTrait_.isActiveRunning = function(t) {
