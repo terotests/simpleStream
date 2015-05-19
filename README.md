@@ -1,7 +1,7 @@
 Simple Stream Class
 -------------------
 
-[Example summing integers] (http://jsfiddle.net/6nt9kmje/)
+[Example summing integers] (http://jsfiddle.net/6nt9kmje/1/)
 
 Starting the stream van be done like this:
 
