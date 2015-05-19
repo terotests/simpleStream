@@ -1475,6 +1475,8 @@ var simpleStream_prototype = function() {
         fn: obs,
         closure: closure
       });
+
+      return this;
     }
     _myTrait_.branch = function(fn, ms) {
 
@@ -1506,6 +1508,7 @@ var simpleStream_prototype = function() {
         m.run();
       });
 
+      return this;
     }
     _myTrait_.branchIfOk = function(fn, ms) {
 
@@ -1533,6 +1536,7 @@ var simpleStream_prototype = function() {
         }, ms);
         m.run();
       });
+      return this;
 
     }
     _myTrait_.collectValuesFor = function(ms) {
@@ -1561,6 +1565,7 @@ var simpleStream_prototype = function() {
         }, ms);
         // m.run();
       });
+      return this;
     }
     _myTrait_.combineLatest = function(streams, fn) {
       var me = this;
@@ -1617,6 +1622,8 @@ var simpleStream_prototype = function() {
           m.stopStream();
         }
       });
+
+      return this;
     }
     _myTrait_.forContext = function(fn) {
       var me = this;
@@ -1649,6 +1656,7 @@ var simpleStream_prototype = function() {
         }
         m.run(arr);
       });
+      return this;
     }
     _myTrait_.getLastProcess = function(t) {
 
@@ -1701,6 +1709,7 @@ var simpleStream_prototype = function() {
         }
         m.run(res);
       });
+      return this;
     }
     _myTrait_.pushValue = function(val) {
 
@@ -1724,6 +1733,7 @@ var simpleStream_prototype = function() {
         }
         m.run(res);
       });
+      return this;
     }
     _myTrait_.startProcess = function(context, myProm) {
 
