@@ -1607,7 +1607,11 @@ var simpleStream_prototype = function() {
         return b;
       }
 
+      console.log("**** combine latests called with ");
+      console.log(streams);
+
       streams.forEach(function(s, i) {
+        console.log(s);
         s.addObserver(function(myProcess) {
           myRes[i] = myProcess.getValue();
           console.log(myRes);
