@@ -1614,7 +1614,7 @@ var simpleStream_prototype = function() {
         console.log(s);
         s.addObserver(function(myProcess) {
           myRes[i] = myProcess.getValue();
-          console.log(myRes);
+          console.log(myRes, i);
           if (allHasValue()) {
             console.log("Pushing value to stream");
             console.log(myRes);
