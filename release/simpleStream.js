@@ -1624,7 +1624,7 @@ var simpleStream_prototype = function() {
             }
             myProcess.run();
           });
-        })(index);
+        })(index + 0);
       });
 
       return this;
