@@ -1374,7 +1374,7 @@ var simpleStream_prototype = function() {
           }
 
         } else {
-          if (!this._context.value) {
+          if (typeof(this._context.value) == "undefined") {
             this._context.value = this._context.initWith;
           }
           if (this._stopState < 2) {
